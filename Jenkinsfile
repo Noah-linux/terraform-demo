@@ -38,8 +38,10 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                // Checkout your repository code
-                git 'https://github.com/Noah-linux/terraform-demo.git'
+                script {
+                    // Clone your repository code
+                    sh 'git clone https://github.com/Noah-linux/terraform-demo.git'
+                }
             }
         }
 
