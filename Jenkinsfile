@@ -29,7 +29,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Checkout your repository code
-                git 'https://github.com/your-repo/your-terraform-repo.git'
+                git 'https://github.com/Noah-linux/terraform-demo.git'
             }
         }
 
