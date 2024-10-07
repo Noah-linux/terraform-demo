@@ -39,8 +39,15 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 script {
-                    // Clone your repository code
-                    sh 'git clone https://github.com/Noah-linux/terraform-demo.git'
+                    // Check if the directory exists, remove it if it does, and then clone the repository
+                    sh '''
+                        if [ -d "terraform-demo" ]; then
+                            echo "Removing existing terraform-demo directory."
+                            rm -rf terraform-demo
+                        fi
+                        echo "Cloning the repository..."
+                        git clone https://github.com/Noah-linux/terraform-demo.git
+                    '''
                 }
             }
         }
