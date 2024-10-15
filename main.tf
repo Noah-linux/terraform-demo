@@ -11,4 +11,5 @@ resource "aws_instance" "autoprovisioned" {
   tags = {
     Name = var.instance_name
   }
+  //user_data = file("${path.module}/scripts/user_data_qa.sh")
 }
